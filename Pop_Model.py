@@ -114,5 +114,6 @@ df.to_csv('./outputs/viability.csv', index=False)
 # Plot heatmap of viability
 inf = df.pivot(index='dose', columns='t_d', values='mean_infected')
 annot = df.pivot(index='dose', columns='t_d', values='viability')
-sns.heatmap(inf, cmap='viridis')
+sns.heatmap(inf, annot=annot ,cmap='viridis')
+plt.savefig('./outputs/viability.pdf')
 # %%
